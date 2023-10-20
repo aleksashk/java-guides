@@ -9,7 +9,7 @@ public class JavaGuidesApplication {
 
     public static void main(String[] args) {
         var context = SpringApplication.run(JavaGuidesApplication.class, args);
-        PizzaController pizzaController = context.getBean(PizzaController.class);
+        PizzaController pizzaController = (PizzaController) context.getBean("pizzaDemo");
         System.out.println(pizzaController.getPizza());
     }
 
