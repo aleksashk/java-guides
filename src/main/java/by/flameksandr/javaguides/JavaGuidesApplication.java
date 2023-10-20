@@ -1,5 +1,6 @@
 package by.flameksandr.javaguides;
 
+import by.flameksandr.javaguides.controller.PizzaController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,7 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class JavaGuidesApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(JavaGuidesApplication.class, args);
+        var context = SpringApplication.run(JavaGuidesApplication.class, args);
+        PizzaController pizzaController = context.getBean(PizzaController.class);
+        System.out.println(pizzaController.getPizza());
     }
 
 }
