@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api")
 public class BookController {
 
     @RequestMapping("/hello-world")
@@ -14,7 +15,6 @@ public class BookController {
 
     @RequestMapping("/book")
     public Book getBook() {
-        Book book = new Book(1, "Core Java", "Learn Core Java and Latest features");
-        return book;
+        return new Book(1, "Core Java", "Learn Core Java and Latest features");
     }
 }
