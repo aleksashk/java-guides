@@ -3,6 +3,7 @@ package by.flameksandr.javaguides.controller;
 import by.flameksandr.javaguides.beans.Book;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -21,12 +22,12 @@ public class BookController {
 
     @PostMapping(value = "/books/create",
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(value = HttpStatus.CREATED)
-    public Book createBook(@RequestBody Book book) {
+//    @ResponseStatus(value = HttpStatus.CREATED)
+    public ResponseEntity<Book> createBook(@RequestBody Book book) {
         System.out.println(book.getId());
         System.out.println(book.getTitle());
         System.out.println(book.getDescription());
 
-        return book;
+        return new ResponseEntity<>(book, HttpStatus.CREATED);
     }
 }
