@@ -18,6 +18,12 @@ public class ValueAnnotationDemo {
     @Value("${mail.password}")
     private String password;
 
+    @Value("${java.home}")
+    private String javaHome;
+
+    @Value("${HOME}")
+    private String homeDir;
+
     public String getDefaultName() {
         return defaultName;
     }
@@ -32,5 +38,13 @@ public class ValueAnnotationDemo {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getJavaHome() {
+        return javaHome;
+    }
+
+    public String getHomeDir() {
+        return homeDir;
     }
 }
