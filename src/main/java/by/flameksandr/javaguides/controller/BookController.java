@@ -59,4 +59,22 @@ public class BookController {
 
         return ResponseEntity.ok(book);
     }
+
+    //http:localhost:8080/api/books/query?id=1&title=Core Java&description=Core Java Description
+    @GetMapping("/books/query")
+    public ResponseEntity<Book> requestParamDemo(
+            @RequestParam(name = "id") int id,
+            @RequestParam(name = "title") String title,
+            @RequestParam(name = "description") String description
+    ) {
+        System.out.println(id);
+        System.out.println(title);
+
+        Book book = new Book();
+        book.setId(id);
+        book.setTitle(title);
+        book.setDescription(description);
+
+        return ResponseEntity.ok(book);
+    }
 }
