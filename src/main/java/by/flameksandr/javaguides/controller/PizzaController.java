@@ -3,7 +3,7 @@ package by.flameksandr.javaguides.controller;
 import by.flameksandr.javaguides.service.Pizza;
 
 public class PizzaController {
-    private Pizza pizza;
+    private final Pizza pizza;
 
     public PizzaController(Pizza pizza) {
         this.pizza = pizza;
