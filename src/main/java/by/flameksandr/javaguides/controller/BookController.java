@@ -13,7 +13,7 @@ public class BookController {
         return "Hello World!";
     }
 
-    @RequestMapping("/book")
+    @RequestMapping(value = {"/book", "/core-java", "/java"})
     public Book getBook() {
         return new Book(1, "Core Java", "Learn Core Java and Latest features");
     }
