@@ -8,6 +8,9 @@ public class Book {
 
     private String description;
 
+    public Book() {
+    }
+
     public Book(int id, String title, String description) {
         this.id = id;
         this.title = title;
