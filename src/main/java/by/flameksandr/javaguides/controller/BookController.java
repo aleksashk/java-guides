@@ -14,7 +14,7 @@ public class BookController {
         return "Hello World!";
     }
 
-    @GetMapping("/book")
+    @GetMapping(value = {"/book", "/java-core", "/java"})
     public Book getBook() {
         return new Book(1, "Core Java", "Learn Core Java and Latest features");
     }
