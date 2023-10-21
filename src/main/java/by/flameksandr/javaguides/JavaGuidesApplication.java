@@ -1,9 +1,7 @@
 package by.flameksandr.javaguides;
 
-import by.flameksandr.javaguides.controller.MyController;
-import by.flameksandr.javaguides.lazy.LazyLoader;
-import by.flameksandr.javaguides.repository.MyRepository;
-import by.flameksandr.javaguides.service.MyService;
+import by.flameksandr.javaguides.scope.PrototypeBean;
+import by.flameksandr.javaguides.scope.SingletonBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -12,16 +10,13 @@ public class JavaGuidesApplication {
 
     public static void main(String[] args) {
         var context = SpringApplication.run(JavaGuidesApplication.class, args);
-        MyController myController = context.getBean(MyController.class);
-        System.out.println(myController.hello());
+        SingletonBean singletonBean1 = context.getBean(SingletonBean.class);
+        SingletonBean singletonBean2 = context.getBean(SingletonBean.class);
+        SingletonBean singletonBean3 = context.getBean(SingletonBean.class);
 
-        MyService myService = context.getBean(MyService.class);
-        System.out.println(myService.hello());
-
-        MyRepository myRepository = context.getBean(MyRepository.class);
-        System.out.println(myRepository.hello());
-
-        LazyLoader lazyLoader = context.getBean(LazyLoader.class);
+        PrototypeBean prototypeBean1 = context.getBean(PrototypeBean.class);
+        PrototypeBean prototypeBean2 = context.getBean(PrototypeBean.class);
+        PrototypeBean prototypeBean3 = context.getBean(PrototypeBean.class);
 
 
     }
