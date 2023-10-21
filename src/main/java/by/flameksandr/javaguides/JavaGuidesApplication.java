@@ -12,7 +12,7 @@ public class JavaGuidesApplication {
 //        PizzaController pizzaController = (PizzaController) context.getBean("pizzaDemo");
 //        System.out.println(pizzaController.getPizza());
 
-        VegPizza vegPizza = (VegPizza) context.getBean("vegPizzaBean");
+        VegPizza vegPizza = (VegPizza) context.getBean("vegPizza");
         System.out.println(vegPizza.getPizza());
     }
 
