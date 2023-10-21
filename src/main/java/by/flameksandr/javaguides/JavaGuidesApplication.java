@@ -1,6 +1,6 @@
 package by.flameksandr.javaguides;
 
-import by.flameksandr.javaguides.value.ValueAnnotationDemo;
+import by.flameksandr.javaguides.propertysource.PropertySourceDemo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,14 +9,11 @@ public class JavaGuidesApplication {
 
     public static void main(String[] args) {
         var context = SpringApplication.run(JavaGuidesApplication.class, args);
-        ValueAnnotationDemo valueAnnotationDemo = context.getBean(ValueAnnotationDemo.class);
-        System.out.println(valueAnnotationDemo.getDefaultName());
+        PropertySourceDemo propertySourceDemo = context.getBean(PropertySourceDemo.class);
 
-        System.out.println(valueAnnotationDemo.getHost());
-        System.out.println(valueAnnotationDemo.getEmail());
-        System.out.println(valueAnnotationDemo.getJavaHome());
-        System.out.println(valueAnnotationDemo.getHomeDir());
-
+        System.out.println(propertySourceDemo.getHost());
+        System.out.println(propertySourceDemo.getEmail());
+        System.out.println(propertySourceDemo.getPassword());
     }
 
 }
