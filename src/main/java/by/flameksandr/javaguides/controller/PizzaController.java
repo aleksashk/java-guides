@@ -18,4 +18,12 @@ public class PizzaController {
     public String getPizza() {
         return pizza.getPizza();
     }
+
+    private void init() {
+        System.out.println("Initialization Logic");
+    }
+
+    private void destroy() {
+        System.out.println("Destroy Logic");
+    }
 }

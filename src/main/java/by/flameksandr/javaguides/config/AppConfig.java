@@ -20,7 +20,7 @@ public class AppConfig {
         return new NonVegPizza();
     }
 
-    @Bean
+    @Bean(initMethod = "init", destroyMethod = "destroy")
     public PizzaController pizzaController() {
         return new PizzaController(nonVegPizza());
     }
