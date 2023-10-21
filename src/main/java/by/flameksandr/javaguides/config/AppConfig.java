@@ -22,7 +22,7 @@ public class AppConfig {
 
     @Bean
     public PizzaController pizzaController() {
-        return new PizzaController(vegPizza());
+        return new PizzaController(nonVegPizza());
     }
 
 }
