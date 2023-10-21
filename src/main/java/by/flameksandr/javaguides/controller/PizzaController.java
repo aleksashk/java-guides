@@ -1,18 +1,18 @@
 package by.flameksandr.javaguides.controller;
 
-import by.flameksandr.javaguides.service.VegPizza;
+import by.flameksandr.javaguides.service.Pizza;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("pizzaDemo")
 public class PizzaController {
-    @Autowired
-    private VegPizza vegPizza;
+    private Pizza pizza;
 
-//    @Autowired
-//    public PizzaController(VegPizza vegPizza) {
-//        this.vegPizza = vegPizza;
-//    }
+    @Autowired
+    public PizzaController(@Qualifier("vegPizza") Pizza pizza) {
+        this.pizza = pizza;
+    }
 
 
 //    @Autowired
@@ -21,6 +21,6 @@ public class PizzaController {
 //    }
 
     public String getPizza() {
-        return vegPizza.getPizza();
+        return pizza.getPizza();
     }
 }
