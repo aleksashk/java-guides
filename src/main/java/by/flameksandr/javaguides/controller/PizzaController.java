@@ -10,7 +10,7 @@ public class PizzaController {
     private Pizza pizza;
 
     @Autowired
-    public PizzaController(@Qualifier("vegPizza") Pizza pizza) {
+    public PizzaController(@Qualifier("nonVegPizza") Pizza pizza) {
         this.pizza = pizza;
     }
 
