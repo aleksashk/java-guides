@@ -12,6 +12,10 @@ public class JavaGuidesApplication {
         ValueAnnotationDemo valueAnnotationDemo = context.getBean(ValueAnnotationDemo.class);
         System.out.println(valueAnnotationDemo.getDefaultName());
 
+        System.out.println(valueAnnotationDemo.getHost());
+        System.out.println(valueAnnotationDemo.getEmail());
+        System.out.println(valueAnnotationDemo.getPassword());
+
     }
 
 }
