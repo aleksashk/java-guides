@@ -1,6 +1,8 @@
 package by.flameksandr.javaguides;
 
-import by.flameksandr.javaguides.controller.PizzaController;
+import by.flameksandr.javaguides.controller.MyController;
+import by.flameksandr.javaguides.repository.MyRepository;
+import by.flameksandr.javaguides.service.MyService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,11 +11,16 @@ public class JavaGuidesApplication {
 
     public static void main(String[] args) {
         var context = SpringApplication.run(JavaGuidesApplication.class, args);
-        PizzaController pizzaController = (PizzaController) context.getBean("pizzaController");
-        System.out.println(pizzaController.getPizza());
+        MyController myController = context.getBean(MyController.class);
+        System.out.println(myController.hello());
 
-//        VegPizza vegPizza = (VegPizza) context.getBean("vegPizza");
-//        System.out.println(vegPizza.getPizza());
+        MyService myService = context.getBean(MyService.class);
+        System.out.println(myService.hello());
+
+        MyRepository myRepository = context.getBean(MyRepository.class);
+        System.out.println(myRepository.hello());
+
+
     }
 
 }
